@@ -1,0 +1,6 @@
+FROM ubuntu:20.04
+
+COPY FCM_IQ_streamer.py FCM_IQ_streamer.py
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y gnuradio qthid-fcd-controller libgnuradio-fcdproplus3.8
+CMD python3 FCM_IQ_streamer.py
